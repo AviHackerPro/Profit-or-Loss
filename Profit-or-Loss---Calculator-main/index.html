@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+  <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+  <style>
+    body {
+      background: #3344d9;
+      font-size: 12px;
+    }
+
+    body,
+    button,
+    input {
+      font-family: 'Righteous', cursive;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+    }
+
+    .background {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .container {
+      flex: 0 1 1000px;
+      margin: auto;
+      padding: 10px;
+    }
+
+    .screen {
+      position: relative;
+      background: #3e3e3e;
+      border-radius: 15px;
+    }
+
+    .screen:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 20px;
+      right: 20px;
+      bottom: 0;
+      border-radius: 15px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, .4);
+      z-index: -1;
+    }
+
+    .screen-body {
+      display: flex;
+    
+    }
+
+    .screen-body-item {
+      flex: 1;
+      padding: 50px;
+    }
+
+    .screen-body-item.left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    .app-title {
+      display: flex;
+      /*flex-direction: column;*/
+      justify-content: center;
+      align-items: center;
+      color: #33d9b2;
+      font-size: 26px;
+      text-transform: uppercase;
+      border-left: 4px solid #218c74;
+      padding: 50px;
+    }
+
+    .app-form-group {
+      margin-bottom: 15px;
+      padding-top: 15px;
+    }
+
+    .app-form-group.buttons {
+      margin-bottom: 0px;
+      text-align: right;
+    }
+
+    .app-form-control {
+      width: 100%;
+      padding: 10px 0;
+      background: none;
+      border: none;
+      border-bottom: 1px solid #666;
+      color: #ddd;
+      font-size: 14px;
+      text-transform: uppercase;
+      outline: none;
+      transition: border-color .2s;
+    }
+
+    .app-form-control::placeholder {
+      color: #FFF;
+    }
+
+    .app-form-control:focus {
+      border-bottom-color: #ddd;
+    }
+
+    .app-form-button {
+      background: none;
+      border: none;
+      color: #33d9b2;
+      font-size: 14px;
+      cursor: pointer;
+      outline: none;
+      text-transform: uppercase;
+    }
+
+    .app-form-button:hover {
+      color: #218c74;
+    }
+
+    .showdata {
+      text-align: center;
+      color: white;
+      font-size: 1.2rem;
+      padding-top: -10px;
+      padding-bottom: 10px;
+    }
+
+    .screen-body-item {
+      background-color: rgb(255, 234, 0);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* .app-form {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    } */
+  </style>
+</head>
+
+<body>
+
+  <div class="background">
+    <div class="container">
+      <div class="screen">
+        <div class="screen-body">
+          <div class="screen-body-item left">
+            <div class="app-title">
+              <div class="animated infinite pulse">
+                Profit <br> or <br> Loss
+              </div>
+            </div>
+          </div>
+          <div class="screen-body-item">
+            <div class="app-form">
+
+              <div class="app-form-group">
+                <input type="text" class="app-form-control" placeholder="APPLE" id="app">
+              </div>
+              <div class="app-form-group">
+                <input type="text" class="app-form-control" placeholder="ORANGE" id="ora">
+              </div>
+              <div class="app-form-group">
+                <input type="text" class="app-form-control" placeholder="BANANA" id="ban">
+              </div>
+              <div class="app-form-group">
+                <input type="text" class="app-form-control" placeholder="MANGO" id="man">
+              </div>
+              <div class="app-form-group">
+                <input type="text" class="app-form-control" placeholder="AVOCADO" id="avo">
+              </div>
+
+              <div class="app-form-group">
+                <input type="number" class="app-form-control" placeholder="APPLE" id="app">
+              </div>
+              <div class="app-form-group">
+                <input type="text" class="app-form-control" placeholder="ORANGE" id="ora">
+              </div>
+              <div class="app-form-group">
+                <input type="text" class="app-form-control" placeholder="BANANA" id="ban">
+              </div>
+              <div class="app-form-group">
+                <input type="text" class="app-form-control" placeholder="MANGO" id="man">
+              </div>
+              <div class="app-form-group">
+                <input type="text" class="app-form-control" placeholder="AVOCADO" id="avo">
+              </div>
+              
+              <div>
+
+                <div>
+                  <input type="button" name="" value="showResult" class="app-form-button" onclick="calcy()">
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+          <div class="app-form-group showdata">
+            <p id="showData"> </p>
+          </div>
+        </div>
+      </div>
+
+      <script>
+
+        const calcy = () => {
+          let app = document.getElementById('app').value;
+          let ora = document.getElementById('ora').value;
+          let ban = document.getElementById('ban').value;
+          let man = document.getElementById('man').value;
+          let avo = document.getElementById('avo').value;
+          let profit = "";
+
+          const calcy = () =>
+          let app = document.getElementById('app').value;
+          let ora = document.getElementById('ora').value;
+          let ban = document.getElementById('ban').value;
+          let man = document.getElementById('man').value;
+          let avo = document.getElementById('avo').value;
+          let profit = "";
+
+          let totalProfit = parseFloat(app) + parseFloat(ora) + parseFloat(ban) + parseFloat(man) + parseFloat(avo);
+          alert(totalProfit);
+
+          //let totalLoss = parseFloat(app) + parseFloat(ora) + parseFloat(ban) + parseFloat(man) + parseFloat(avo);
+          //alert(totalLoss);
+
+          let perc = (totalProfit / "app-form") * 100;
+          alert(perc);
+
+          debugger;
+
+          /*if (perc <= 100 && perc >= 80) {
+            profit = 'A';
+          } else if (perc <= 79 && perc >= 60) {
+            profit = 'B';
+          } else if (perc <= 59 && perc >= 40) {
+            profit = 'C';
+          } else {
+            profit = 'F';
+          }*/
+
+          if (perc >= 39.5) {
+            document.getElementById('showData').innerHTML = ` Out of 400 your total is  ${totalProfit} and percentage is ${perc}%. <br> Your grade is ${profit}. You are Pass. `
+          }
+          else {
+            document.getElementById('showData').innerHTML = ` Out of 400 your total is  ${totalProfit} and percentage is ${perc}%. <br> Your grade is ${profit}. You are Fail. `
+          }
+
+        }
+
+      </script>
+
+</body>
+
+</html>
